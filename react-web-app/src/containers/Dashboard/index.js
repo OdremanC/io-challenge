@@ -5,7 +5,7 @@ import { MapContainer } from '..';
 import { Container, TicketsList } from '../../components';
 
 import { fetchTickets } from '../../redux/actions/tickets'
-
+import Modal from '../../components/ModalComponent/Modal.js';
 import './style.css'
 
 class Dashboard extends Component {
@@ -15,6 +15,7 @@ class Dashboard extends Component {
         this.dispatch = this.props.dispatch;
 
         this.state = {
+            isOpen: false,
 
         }
     }
@@ -24,8 +25,12 @@ class Dashboard extends Component {
         this.dispatch(fetchTickets())
 
     }
+    closeModal = ()=> {
+
+    }
 
     render(){
+        console.log(this.props)
         return(
             <Container extraClass="dashboard">
                 <div className="tickets-box">

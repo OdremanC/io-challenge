@@ -7,7 +7,7 @@ const TicketSchema = new mongoose.Schema({
 
     description:  { type: String, required: true },
 
-    coords : [{ type: Number, required: true }],
+    coords : [{ type: String, required: true }],
 
     code : { type: Number, required: true },
 
@@ -16,4 +16,3 @@ const TicketSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Ticket', TicketSchema);
-

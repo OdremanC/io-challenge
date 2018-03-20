@@ -1,34 +1,34 @@
 'use strict';
-const Ticket 		= require('../model/ticket');
-const Q 		= require('q');
+const Ticket    = require('../model/ticket');
+const Promises = require('promise');
 
-exports.index = function(data) {
-	return Q.Promise(function(resolve, reject) {
-		Ticket.find()
-		.exec((err, tickets) => {
-				if (err) return reject({ code: 500, error: err });
+exports.index = (data) => {
+  const promise = new Promise((resolve, reject) => {
+    Ticket.find()
+      .exec((err, tickets) => {
+        if (err) return reject({ code: 500, error: err });
 
-				resolve(tickets)
-		});
-	});
+        resolve(tickets)
+      });
+  });
+  return promise;
 };
 
 
-exports.create = function(data) {
-	return Q.Promise(function(resolve, reject) {
-		Ticket.findOne().sort('-createdOn').exec((error, lastTicket) =>{
-			if(error) return reject({ code: 404, error })
+exports.create = (data) => {
+  const promise = new Promise((resolve, reject) => {
+    Ticket.findOne().sort('-createdOn').exec((error, lastTicket) => {
+      if(error) return reject({ code: 404, error })
 
-			let code =  lastTicket ? lastTicket.code + 1 : 1;
+      let code =  lastTicket ? lastTicket.code + 1 : 1;
 
-			let payload = Object.assign(data.body, {code})
+      let payload = Object.assign(data.body, {code})
 
-			Ticket.create(payload, (err, ticket) => {
-				if (err) return reject({ code: 500, error: err });
-				resolve(ticket.toJSON());
-			}); 
-
-
-		})
-	});
+      Ticket.create(payload, (err, ticket) => {
+        if (err) return reject({ code: 500, error: err });
+        resolve(ticket.toJSON());
+      }); 
+    });
+    return promise;
+  });
 }
