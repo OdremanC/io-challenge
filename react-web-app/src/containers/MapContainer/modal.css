@@ -1,14 +1,41 @@
 .Contenedor {
-  width: 367px;
-  height:234px;
-  border-radius: 5px;
-  padding:10px;
+  width: 367px !important;
+  height:234px !important;
+  border-radius: 5px !important;
+  padding:10px !important;
   
 
 }
-.title{
 
-  font-family: Lato-Heavy;
-  font-size: 16px;
-  font-style: rgb(737373);
+.ContentTitle{
+  align-content: left;
+}
+.dateContainer{
+  width: 307px;
+  height: 54px;
+}
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 367px;
+    height: 2px;
+    color: rgb(217 225 233);
+    border-style: 1px;
+    align-items: center;
+    
+}
+.Descripcion{
+  width: 280px;
+  height: 45px;
+  margin-top: 30px;
+  font-size: 15px; 
+}
+.line{
+    width:51px;
+    height:2px;
+    background: var(--cian);
+    margin-top: 15px;
+    margin-left: 0px;
+    margin-bottom: 35px;
 }
