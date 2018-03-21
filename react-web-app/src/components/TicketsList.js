@@ -3,13 +3,14 @@ import TimeAgo from 'javascript-time-ago'
 import es from 'javascript-time-ago/locale/es'
 import FontAwesome from 'react-fontawesome'
 import {} from 'font-awesome/css/font-awesome.css'
-
+import { setCurrent } from '../redux/actions/tickets'
 TimeAgo.locale(es)
 
 const getTimeAgo = (date) => new TimeAgo('es-AR').format(date);
 
 const TicketsListItem = (props) => (
-    <div>
+
+    <div onClick={()=> {props.getCode(props.ticket.code)}}>
         <div style={{cursor: 'pointer', borderBottom: '1px solid', borderBottomColor: 'var(--light)'}}>
             <div style={{paddingLeft: '40px', display: 'flex'}}>
                 <div style={{flexDirection: 'row', alignItems: 'center', display: 'flex', height: '77px'}}>
@@ -27,13 +28,12 @@ const TicketsListItem = (props) => (
                 </div>
             </div>
         </div>
-        
     </div>
 )
 
-const TicketsList = (props) =>{
+const TicketsList = (props ) => {
     return(
-        
+     
         props.tickets.status === 'TICKETS_LOADING' ?
             <div style={{padding: '40px'}}>
                 <FontAwesome
@@ -47,7 +47,7 @@ const TicketsList = (props) =>{
             <div style={{overflowY: 'scroll', height: 'calc(100vh - 126px)'}}> {
                 props.tickets.all.tickets.map(
                     (ticket) => (    
-                        <TicketsListItem key={ticket._id} ticket={ticket} />
+                        <TicketsListItem key={ticket._id} ticket={ticket} getCode={props.getCode}/>
                     )
                 )
             }

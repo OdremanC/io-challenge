@@ -15,3 +15,10 @@ export function fetchTickets() {
       })
   }
 }
+
+export function setCurrent(ticketCode){
+  return{
+    type:'TICKETS_CURRENT_LOADED',
+    payload: ticketCode
+  };
+}

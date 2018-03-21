@@ -29,6 +29,6 @@ exports.create = (data) => {
         resolve(ticket.toJSON());
       }); 
     });
-    return promise;
   });
+  return promise;  
 }

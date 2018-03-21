@@ -1,0 +1,14 @@
+.Contenedor {
+  width: 367px;
+  height:234px;
+  border-radius: 5px;
+  padding:10px;
+  
+
+}
+.title{
+
+  font-family: Lato-Heavy;
+  font-size: 16px;
+  font-style: rgb(737373);
+}

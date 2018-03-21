@@ -15,7 +15,7 @@ exports.list = (req, res, next) => {
 exports.create = (req, res) => {
   UserCtrl.create(req).then((data) => {
     res.send(data).status(200);
-  }, function(err) {
+  }, (err) => {
     console.error(err);
     res.send(err.code || 500, err.error || err);
   });

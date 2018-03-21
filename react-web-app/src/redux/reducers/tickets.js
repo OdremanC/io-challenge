@@ -5,6 +5,7 @@ const initialState = {
 }
 
 const actionHandlers = {
+
   "TICKETS_LOADING": (action) => ({
     all: action.payload
   }),
@@ -13,6 +14,9 @@ const actionHandlers = {
   }),
   "TICKETS_LOAD_ERROR": (action) => ({
     all: action.payload
+  }),
+  "TICKETS_CURRENT_LOADED": (action) => ({
+    current: action.payload
   })
 }
 
