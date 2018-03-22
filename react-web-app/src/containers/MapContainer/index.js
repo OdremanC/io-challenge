@@ -67,6 +67,7 @@ export class MapContainer extends Component {
 
                 >
                     
+                   
                     <div className="Contenedor">
                         <div className="ContentTitle">
                             <div style={{fontFamily: 'Lato-Heavy', fontSize: '15px', lineHeight: '22.5px'}}>
@@ -74,8 +75,8 @@ export class MapContainer extends Component {
                             </div>
                             <div className="line" />
                         </div>
-                        <div className="dateContainer">
-                            <div style={{fontFamily: 'Lato-Medium',fontSize: '15px'}} className="fecha">
+                        <div className="fecha">
+                            <div style={{fontFamily: 'Lato-Medium',fontSize: '15px'}}>
                                 {createOn}
                             </div>
                         </div>
@@ -83,7 +84,7 @@ export class MapContainer extends Component {
                         <div style={{fontFamily: 'Lato-Medium',fontSize: '15px'}} className="Descripcion">
                             {description}
                         </div>
-                    </div>                    
+</div>               
                 </InfoWindow>
             </Map>        
         );

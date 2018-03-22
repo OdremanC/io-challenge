@@ -1,18 +1,21 @@
-.Contenedor {
-  width: 376px !important;
-  height:234px !important;
+
+
+.ModalContenedor {
+  width: 376px !;
+  height:234px !;
   border-radius: 5px !important;
-  padding:10px !important;
+  padding:20px !important;
   
 
 }
 
-.ContentTitle{
-  align-content: left;
+.titulo{
+  
 }
-.dateContainer{
+.fecha{
   width: 307px;
-  height: 54px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 hr {
     display: block;
@@ -27,7 +30,7 @@ hr {
 }
 .Descripcion{
   width: 350px;
-  height: 45px;
+  margin-bottom: 20px;
   margin-top: 15px;
   font-size: 15px; 
 }
@@ -35,7 +38,7 @@ hr {
     width:51px;
     height:2px;
     background: var(--cian);
-    margin-top: 15px;
+    margin-top: 8px;
+    margin-bottom: 25px;
     margin-left: 0px;
-    margin-bottom: 35px;
 }
