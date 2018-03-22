@@ -34,9 +34,9 @@ export default (state = initialState, action = {}) => {
   )
     : state;
 
-  console.log('================TICKET STORE====================');
-  console.log(newState);
-  console.log('=================REDUX===================');
+  //console.log('================TICKET STORE====================');
+  //console.log(newState);
+  //console.log('=================REDUX===================');
 
   return newState;
 }

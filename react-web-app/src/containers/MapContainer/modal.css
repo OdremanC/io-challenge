@@ -1,5 +1,5 @@
 .Contenedor {
-  width: 367px !important;
+  width: 376px !important;
   height:234px !important;
   border-radius: 5px !important;
   padding:10px !important;
@@ -26,9 +26,9 @@ hr {
     
 }
 .Descripcion{
-  width: 280px;
+  width: 350px;
   height: 45px;
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 15px; 
 }
 .line{

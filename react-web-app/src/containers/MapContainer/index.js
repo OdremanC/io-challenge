@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 import TimeAgo from 'javascript-time-ago'
 import {} from 'font-awesome/css/font-awesome.css'
 import './modal.css'
@@ -64,6 +64,7 @@ export class MapContainer extends Component {
                     onClose={this.onInfoWindowClose}
                     visible={this.state.showingInfoWindow}
                     position={{lat: coords[0], lng: coords[1]}}
+
                 >
                     
                     <div className="Contenedor">

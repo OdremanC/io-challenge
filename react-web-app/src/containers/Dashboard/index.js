@@ -15,31 +15,60 @@ class Dashboard extends Component {
         this.dispatch = this.props.dispatch;
 
         this.state = {
-            current: {}            
+            current: {},
+            rerender: true
         }
     }
 
-    componentDidMount(){
+    componentWillReceiveProps(nextProps){
 
-        this.dispatch(fetchTickets())
-
+        if(this.props.tickets.all){
+            if (this.props.tickets.all.tickets.length === nextProps.tickets.all.tickets.length) {
+                this.setState({
+                    rerender: false
+                });
+            }else{
+                this.setState({
+                    rerender: true
+                });
+            }
+        }        
     }
 
+    componentDidMount(){
+        setInterval( () => { 
+            this.dispatch(fetchTickets()); 
+        }, 2000);
+    }
+
+
+    shouldComponentUpdate(nextProps, nextState){
+        return this.state.rerender;
+    }
+
+
+
+ 
     getCurrent = (ticketCode) => {
+
         if (ticketCode && this.props.tickets.all) {
+
             let currentTicket = this.props.tickets.all.tickets.find(ticket =>{
                 return ticket.code === ticketCode;
             });
             if (currentTicket) {
+
                 this.setState({
-                    current:currentTicket
+                    current:currentTicket,
+                    rerender: true
                 });
             }
         }
     }
 
+
     render(){
-    
+        
         const { current } = this.state;
         return(
             <Container extraClass="dashboard">

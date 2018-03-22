@@ -3,7 +3,7 @@ import TimeAgo from 'javascript-time-ago'
 import es from 'javascript-time-ago/locale/es'
 import FontAwesome from 'react-fontawesome'
 import {} from 'font-awesome/css/font-awesome.css'
-import { setCurrent } from '../redux/actions/tickets'
+
 TimeAgo.locale(es)
 
 const getTimeAgo = (date) => new TimeAgo('es-AR').format(date);
