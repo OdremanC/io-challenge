@@ -68,7 +68,7 @@ export class MapContainer extends Component {
                 >
                     
                    
-                    <div className="Contenedor">
+                    <div className="ModalContenedor">
                         <div className="ContentTitle">
                             <div style={{fontFamily: 'Lato-Heavy', fontSize: '15px', lineHeight: '22.5px'}}>
                                 {title}
