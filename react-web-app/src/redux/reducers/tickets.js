@@ -14,9 +14,6 @@ const actionHandlers = {
   }),
   "TICKETS_LOAD_ERROR": (action) => ({
     all: action.payload
-  }),
-  "TICKETS_CURRENT_LOADED": (action) => ({
-    current: action.payload
   })
 }
 
@@ -34,9 +31,9 @@ export default (state = initialState, action = {}) => {
   )
     : state;
 
-  //console.log('================TICKET STORE====================');
-  //console.log(newState);
-  //console.log('=================REDUX===================');
+  console.log('================TICKET STORE====================');
+  console.log(newState);
+  console.log('=================REDUX===================');
 
   return newState;
 }

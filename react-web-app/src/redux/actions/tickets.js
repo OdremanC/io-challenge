@@ -5,7 +5,7 @@ export function fetchTickets() {
     axios
       .get(url.resolve((process.env.REACT_APP_API_HOST || 'http://localhost:8080'), '/api/tickets'))
       .then(function (response) {
-        //console.log(response);
+        console.log(response);
         dispatch({ type: 'TICKETS_LOADED', payload: { tickets: response.data.map((ticket) => Object.assign(ticket, {createdOn: new Date(ticket.createdOn)})) } });
       })
       .catch(function (error) {
