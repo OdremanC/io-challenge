@@ -45,15 +45,12 @@ class Dashboard extends Component {
     shouldComponentUpdate(nextProps, nextState){
         return this.state.rerender;
     }
-
-
-
  
     getCurrent = (ticketCode) => {
 
         if (ticketCode && this.props.tickets.all) {
 
-            let currentTicket = this.props.tickets.all.tickets.find(ticket =>{
+            let currentTicket = this.props.tickets.all.tickets.find(ticket => {
                 return ticket.code === ticketCode;
             });
             if (currentTicket) {
@@ -79,7 +76,7 @@ class Dashboard extends Component {
                     <div className="title-line" />
                 
                     <TicketsList tickets={this.props.tickets} getCode={this.getCurrent}/>
-                
+    
                 </div>
                 <div className="map">
                     <MapContainer currentTicket={current}/>
