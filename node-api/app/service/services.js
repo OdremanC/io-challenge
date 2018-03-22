@@ -2,7 +2,7 @@
 const jwt = require('jwt-simple');
 const moment = require('moment');
 const config = require('../../config');
-
+//Genera el jwt para el usuario logeado
 exports.createToken = function(users) {
   
   var payload = {

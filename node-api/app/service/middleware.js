@@ -3,7 +3,7 @@ const jwt = require('jwt-simple');
 const moment = require('moment');
 const config = require('../../config');
 const users = require('../model/users.js');
-
+//Middleware para validar el jwt para permitir acceso a los endpoints que lo requieran
 exports.ensureAuthenticated = function(req, res, next) {
 
   if(!req.headers.authorization) {
